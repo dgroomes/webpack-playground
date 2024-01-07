@@ -35,6 +35,4 @@ See the README in [typescript-web/](typescript-web/).
 
 ## `distribution-variants/`
 
-NOT YET IMPLEMENTED
-
 Build a project into multiple distribution variants like "development", "production", "freemium", "premium", etc.

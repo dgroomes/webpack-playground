@@ -1,7 +1,5 @@
 # distribution-variants
 
-NOT YET IMPLEMENTED
-
 Use webpack to build a project into multiple distribution variants like "development", "production", "freemium", "premium", etc.
 
 
@@ -66,19 +64,53 @@ Follow these instructions to build and run the different distribution variants o
     * ```shell
       npm run build
       ```
+    * Study the console output of webpack. It shows that the "basic-logging" variant distribution is much smaller (1.82 KiB)
+      compared to the "fancy-logging" distribution (43.8 KiB). That's the difference that including or omitting the
+      Chalk dependency (and its transitive dependencies) makes.
+    * ```text
+      $ npm run build
+      
+      > webpack-playground_distribution-variants@1.0.0 build
+      > webpack
+      
+      basic-logging:
+        asset bundle.js 1.82 KiB [emitted] (name: main)
+        ./src/main.js 157 bytes [built] [code generated]
+        ./src/basic-logging.js 377 bytes [built] [code generated]
+        basic-logging (webpack 5.89.0) compiled successfully in 272 ms
+      
+      fancy-logging:
+        asset bundle.js 43.8 KiB [emitted] (name: main)
+        runtime modules 123 bytes 1 module
+        modules by path ./node_modules/ 39.4 KiB
+          modules by path ./node_modules/chalk/source/*.js 10.2 KiB
+            ./node_modules/chalk/source/index.js 5.93 KiB [built] [code generated]
+            + 2 modules
+          modules by path ./node_modules/color-convert/*.js 20.5 KiB
+            ./node_modules/color-convert/index.js 1.67 KiB [built] [code generated]
+            ./node_modules/color-convert/conversions.js 16.6 KiB [built] [code generated]
+            ./node_modules/color-convert/route.js 2.2 KiB [built] [code generated]
+          ./node_modules/ansi-styles/index.js 4.04 KiB [built] [code generated]
+          ./node_modules/supports-color/browser.js 67 bytes [built] [code generated]
+          ./node_modules/color-name/index.js 4.51 KiB [built] [code generated]
+        modules by path ./src/*.js 1.99 KiB
+          ./src/main.js 157 bytes [built] [code generated]
+          ./src/fancy-logging.js 1.84 KiB [built] [code generated]
+        fancy-logging (webpack 5.89.0) compiled successfully in 313 ms
+      ```
 4. Run the "basic-logging" variant of the program
     * ```shell
-      node dist/basic-logging/index.js
+      node dist/basic-logging/bundle.js
       ```
     * The output will have no colors or timestamps and look something like the following.
     * ```text
-      Hello from the "basic-logging" variant of the program!
+      Hello from the 'basic-logging' distribution variant of the program!
       ```
 5. Run the "fancy-logging" variant of the program
     * ```shell
-      node dist/fancy-logging/index.js
+      node dist/fancy-logging/bundle.js
       ```
     * The output will have colors and timestamps and look something like the following.
     * ```text
-      2024-01-01 00:12:00.000Z Hello from the "fancy-logging" variant of the program!
+      2024-01-01T12:00:00.123Z Hello from the "fancy-logging" distribution variant of the program!
       ```
