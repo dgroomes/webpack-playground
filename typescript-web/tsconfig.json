@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    // I haven't figured out how "allowJs" and "checkJs" work. If I set "allowJs" to true or false, the project still
+    // compiles.
+    "allowJs": true,
+    "moduleResolution": "node"
+  }
+}
