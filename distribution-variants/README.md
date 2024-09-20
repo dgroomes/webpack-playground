@@ -35,7 +35,7 @@ the constraint is extreme. In these cases, we can "push left" and bake these dif
 software into physically different *distribution variants*. Each variant can be hard coded with certain values, can be
 bundled with different optional third-party dependencies, can be optimized with a special optimizing compiler, etc. 
 
-For example, Android's Gradle build system has two features that do this. They are called *build types* and *product flavors*.
+For example, Android's Gradle-based build system has two features that do this. They are called *build types* and *product flavors*.
 Read about these concepts in the Android Developer's documentation page [*Configure build variants*](https://developer.android.com/build/build-variants).
 This ability is especially important for Android because of the wide variety of devices that run Android and the prevalence
 of the freemium business model where an app is sometimes distributed with a free version and a paid version. We can
@@ -55,7 +55,7 @@ Users and operators have the freedom to choose which distribution variant they w
 Follow these instructions to build and run the different distribution variants of the program.
 
 1. Pre-requisite: Node.js
-    * I used Node v20.9.0
+    * I used Node v20.17.0
 2. Install dependencies
     * ```shell
       npm install
@@ -114,3 +114,12 @@ Follow these instructions to build and run the different distribution variants o
     * ```text
       2024-01-01T12:00:00.123Z Hello from the "fancy-logging" distribution variant of the program!
       ```
+
+
+## Wish List
+
+General clean-ups, todos and things I wish to implement for this project:
+
+* [ ] Why did I use babel? I vaguely remember that I think this was what I wanted. Just trying to remember why I went
+  for it and also why I went with CommonJS. UPDATE: oh yes Chalk 5.x is ESM only and I purposely stayed on 4.x. But did
+  I do that because I can't do the `require`/module-resolution trick in ESM?
