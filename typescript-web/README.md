@@ -20,7 +20,7 @@ but I moved it to this webpack-specific repository.
 Follow these instructions to build and run the project.
 
 1. Pre-requisite: Node.js
-    * I used Node v20.9.0
+    * I used Node v20.17.0
 2. Install dependencies
    * ```shell
      npm install
@@ -55,10 +55,10 @@ the manifest file name is `build.gradle.kts`. The `.kts` file type is a Kotlin *
 following:
 
 ```kotlin
-val slf4jVersion = "2.0.10" // SLF4J releases: http://www.slf4j.org/news.html
-val httpComponentsV5Version = "5.2.4" // HttpComponents v5 releases: https://hc.apache.org/news.html
-val wireMockVersion = "3.3.1" // WireMock releases: https://github.com/tomakehurst/wiremock/tags
-val http4kVersion = "5.12.1.0" // http4K releases: https://github.com/http4k/http4k/releases
+val slf4jVersion = "2.0.16" // SLF4J releases: http://www.slf4j.org/news.html
+val httpComponentsV5Version = "5.3" // HttpComponents v5 releases: https://hc.apache.org/news.html
+val wireMockVersion = "3.9.1" // WireMock releases: https://github.com/tomakehurst/wiremock/tags
+val http4kVersion = "5.31.0.0" // http4K releases: https://github.com/http4k/http4k/releases
 ```
 
 This makes it easy for me to quickly research the latest releases for a library and make an informed decision about
@@ -114,7 +114,7 @@ published a year ago by bnjmnt4n <benjamin@dev.ofcr.se>
 
 ## Wish List
 
-General clean-ups, ITEMs and things I wish to implement for this project:
+General clean-ups, todos and things I wish to implement for this project:
 
 * [x] DONE Bug. The source `index.html` file is not actually used.
 * [x] DONE Add CSS. Make sure to use the idiomatic webpack way. 
